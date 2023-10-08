@@ -1,32 +1,78 @@
-# Prerequisites
-*.d
+namespace ConsoleApp10
+{
+    // Developer class
+    public class Developer
+    {
+        public string Name;
+        public string Surname;
+        public int Age;
+        public int Experience;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+        // Default constructor
+        public Developer()
+        {
+            
+        }
 
-# Precompiled Headers
-*.gch
-*.pch
+        //constructor
+        public Developer(string name, string surname, int age, int experience)
+        {
+            Name = name;
+            Surname = surname;
+            Age = age;
+            Experience = experience;
+        }
+    }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    // Backend class
+    public class BackendDeveloper : Developer
+    {
+        public int SqlExperienceYear;
 
-# Fortran module files
-*.mod
-*.smod
+        //constructor
+        public BackendDeveloper(string name, string surname, int age, int experience, int sqlExperienceYear)
+            : base(name, surname, age, experience)
+        {
+            SqlExperienceYear = sqlExperienceYear;
+        }
+    }
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    // Frontend class
+    public class FrontendDeveloper : Developer
+    {
+        public int ReactExperienceYear;
 
-# Executables
-*.exe
-*.out
-*.app
+        //constructor
+        public FrontendDeveloper(string name, string surname, int age, int experience, int reactExperienceYear)
+            : base(name, surname, age, experience)
+        {
+            ReactExperienceYear = reactExperienceYear;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            // Her bir classa uygun bir nece dene obyekt yaradin
+            BackendDeveloper backendDeveloper = new BackendDeveloper("person1", "person2", 30, 5, 3);
+            FrontendDeveloper frontendDeveloper = new FrontendDeveloper("person3", "person4", 28, 4, 2);
+
+            
+            Console.WriteLine("Backend Developer:");
+            Console.WriteLine($"Name: {backendDeveloper.Name}");
+            Console.WriteLine($"Surname: {backendDeveloper.Surname}");
+            Console.WriteLine($"Age: {backendDeveloper.Age}");
+            Console.WriteLine($"Experience: {backendDeveloper.Experience}");
+            Console.WriteLine($"SQL Experience Year: {backendDeveloper.SqlExperienceYear}");
+
+            Console.WriteLine("Frontend Developer:");
+            Console.WriteLine($"Name: {frontendDeveloper.Name}");
+            Console.WriteLine($"Surname: {frontendDeveloper.Surname}");
+            Console.WriteLine($"Age: {frontendDeveloper.Age}");
+            Console.WriteLine($"Experience: {frontendDeveloper.Experience}");
+            Console.WriteLine($"React Experience Year: {frontendDeveloper.ReactExperienceYear}");
+        }
+    }
+
+}
