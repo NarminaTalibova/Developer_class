@@ -55,8 +55,8 @@ namespace ConsoleApp10
         static void Main()
         {
             // Her bir classa uygun bir nece dene obyekt yaradin
-            BackendDeveloper backendDeveloper = new BackendDeveloper("person1", "person2", 30, 5, 3);
-            FrontendDeveloper frontendDeveloper = new FrontendDeveloper("person3", "person4", 28, 4, 2);
+            BackendDeveloper backendDeveloper = new BackendDeveloper("person1Name", "person1Surname", 30, 5, 3);
+            FrontendDeveloper frontendDeveloper = new FrontendDeveloper("person2Name", "person2Surname", 28, 4, 2);
 
             
             Console.WriteLine("Backend Developer:");
